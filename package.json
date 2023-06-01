@@ -1,36 +1,15 @@
 {
-  "name": "joi-to-typescript",
+  "name": "@idot-digital/joi-to-typescript",
   "description": "Convert Joi Schemas to TypeScript interfaces",
-  "version": "4.4.1",
+  "version": "4.4.6",
   "author": "Jono Clarnette",
-  "keywords": [
-    "joi",
-    "ts",
-    "typescript",
-    "hapi",
-    "interface"
-  ],
+  "type": "module",
   "license": "MIT",
-  "repository": {
-    "url": "https://github.com/mrjono1/joi-to-typescript",
-    "type": "git"
-  },
-  "funding": "https://github.com/mrjono1/joi-to-typescript?sponsor=1",
-  "bugs": {
-    "url": "https://github.com/mrjono1/joi-to-typescript/issues"
-  },
-  "main": "./dist/main/index.js",
-  "module": "./dist/module/index.js",
-  "typings": "./dist/types/index.d.ts",
-  "exports": {
-    "import": "./dist/module/index.js",
-    "require": "./dist/main/index.js"
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
-    "build:esm": "tsc --module es2020 --outDir ./dist/module",
-    "build:cjs": "tsc --module commonjs --outDir ./dist/main",
-    "build:dts": "tsc --declaration --emitDeclarationOnly --outDir ./dist/types",
-    "build": "yarn build:esm && yarn build:cjs && yarn build:dts",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint 'src/**'",
     "test": "jest --config jest.config.cjs",
@@ -58,6 +37,6 @@
     "testEnvironment": "node"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   }
 }

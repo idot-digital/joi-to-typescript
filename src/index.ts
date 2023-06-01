@@ -1,11 +1,11 @@
 import { AnySchema } from 'joi';
 import Path from 'path';
 
-import { Settings, ConvertedType, InputFileFilter } from './types';
-import { convertFilesInDirectory } from './convertFilesInDirectory';
-import { writeInterfaceFile } from './writeInterfaceFile';
-import { convertSchemaInternal } from './analyseSchemaFile';
-import { writeIndexFile } from './write';
+import { Settings, ConvertedType, InputFileFilter } from './types.js';
+import { convertFilesInDirectory } from './convertFilesInDirectory.js';
+import { writeInterfaceFile } from './writeInterfaceFile.js';
+import { convertSchemaInternal } from './analyseSchemaFile.js';
+import { writeIndexFile } from './write.js';
 
 export { Settings };
 

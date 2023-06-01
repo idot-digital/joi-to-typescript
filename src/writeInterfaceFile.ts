@@ -1,7 +1,7 @@
 import Path from 'path';
 import { writeFileSync } from 'fs';
 
-import { Settings, GenerateTypeFile } from './types';
+import { Settings, GenerateTypeFile } from './types.js';
 
 /**
  * Write interface file

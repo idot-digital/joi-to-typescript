@@ -4,7 +4,7 @@
 import { writeFileSync } from 'fs';
 import Path from 'path';
 
-import { Settings, JsDoc } from './types';
+import { Settings, JsDoc } from './types.js';
 
 /**
  * Write index.ts file
@@ -17,7 +17,7 @@ export function writeIndexFile(settings: Settings, fileNamesToExport: string[]):
     // Don't write an index file if its going to export nothing
     return;
   }
-  const exportLines = fileNamesToExport.map(fileName => `export * from './${fileName.replace(/\\/g, '/')}';`);
+  const exportLines = fileNamesToExport.map(fileName => `export * from './${fileName.replace(/\\/g, '/')}.js';`);
   const fileContent = `${settings.fileHeader}\n\n${exportLines.join('\n').concat('\n')}`;
   writeFileSync(Path.join(settings.typeOutputDirectory, 'index.ts'), fileContent);
 }

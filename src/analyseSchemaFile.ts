@@ -1,11 +1,11 @@
 import Joi, { AnySchema } from 'joi';
 import Path from 'path';
 
-import { Settings, ConvertedType, GenerateTypeFile } from './types';
-import { getTypeFileNameFromSchema } from './write';
-import { getAllCustomTypes, parseSchema, typeContentToTs } from './parse';
-import { Describe } from './joiDescribeTypes';
-import { ensureInterfaceorTypeName, getInterfaceOrTypeName } from './joiUtils';
+import { Settings, ConvertedType, GenerateTypeFile } from './types.js';
+import { getTypeFileNameFromSchema } from './write.js';
+import { getAllCustomTypes, parseSchema, typeContentToTs } from './parse.js';
+import { Describe } from './joiDescribeTypes.js';
+import { ensureInterfaceorTypeName, getInterfaceOrTypeName } from './joiUtils.js';
 
 export function convertSchemaInternal(
   settings: Settings,
@@ -77,7 +77,7 @@ export async function analyseSchemaFile(
   const allConvertedTypes: ConvertedType[] = [];
 
   const fullFilePath = Path.resolve(Path.join(settings.schemaDirectory, schemaFileName));
-  const schemaFile = await import(fullFilePath);
+  const schemaFile = (await import(`file://${fullFilePath}`));
 
   // Create Type File Name
   const typeFileName = getTypeFileNameFromSchema(schemaFileName, settings);

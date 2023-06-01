@@ -1,8 +1,8 @@
 import Path from 'path';
 import { existsSync, lstatSync, mkdirSync, readdirSync } from 'fs';
-import { Settings, GenerateTypeFile, GenerateTypesDir } from './types';
-import { writeIndexFile, getTypeFileNameFromSchema } from './write';
-import { analyseSchemaFile } from './analyseSchemaFile';
+import { Settings, GenerateTypeFile, GenerateTypesDir } from './types.js';
+import { writeIndexFile, getTypeFileNameFromSchema } from './write.js';
+import { analyseSchemaFile } from './analyseSchemaFile.js';
 
 /**
  * Create types from schemas from a directory

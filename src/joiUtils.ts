@@ -1,5 +1,5 @@
-import { Settings } from '.';
-import { Describe } from './joiDescribeTypes';
+import { Settings } from 'index.js';
+import { Describe } from './joiDescribeTypes.js';
 
 /**
  * Fetch the metadata values for a given field. Note that it is possible to have

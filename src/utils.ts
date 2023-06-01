@@ -1,4 +1,4 @@
-import { Describe } from 'joiDescribeTypes';
+import { Describe } from 'joiDescribeTypes.js';
 
 /**
  * Applies the mapper over each element in the list.
